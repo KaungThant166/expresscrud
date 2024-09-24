@@ -1,0 +1,16 @@
+<% if (blogs.length) { %>
+<% blogs.forEach(b => { %>
+<div class="blog-card">
+  <a href="/blogs/<%= b._id %>">
+    <h1>Blog title-<%= b.title %></h1>
+  </a>
+  <p>Blog Intro-<%= b.intro %></p>
+
+  <form action="blogs/<%= b._id %>/delete" method="post">
+    <button class="blog-delete-btn" type="submit">Delete</button>
+  </form>
+</div>
+<% }) %>
+<% }else{%>
+<h1>blog not found</h1>
+<% } %>
